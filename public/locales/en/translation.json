@@ -1,7 +1,4 @@
 {
-  "home": {
-    "textContent": "Workshops calendar"
-  },
   "workshop": {
     "when": "Today",
     "cards": {
