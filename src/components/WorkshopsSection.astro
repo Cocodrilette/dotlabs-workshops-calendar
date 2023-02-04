@@ -1,0 +1,33 @@
+---
+import { t } from "i18next";
+import WorkshopCard from "./WorkshopCard.astro";
+---
+
+<section class="h-screen flex justify-center my-64">
+  <div class="flex flex-col justify-center items-center gap-5 px-4">
+    <WorkshopCard
+      title={t("workshop.cards.title-1")}
+      date={new Date("2/4/2023").toLocaleDateString()}
+      speaker="Alejandro Soto"
+      tags={["Solidity", "Ethereum", "Wagmi", "Frontend Libaries"]}
+    />
+    <WorkshopCard
+      title={t("workshop.cards.title-2")}
+      date={new Date("2/11/2023").toLocaleDateString()}
+      speaker="Junior Rojas"
+      tags={["Solidity", "Ethereum", "Chainlink"]}
+    />
+    <WorkshopCard
+      title={t("workshop.cards.title-3")}
+      date={new Date("2/18/2023").toLocaleDateString()}
+      speaker="Juan Cogollo"
+      tags={["Solidity", "Ethereum", "Hardhat"]}
+    />
+    <WorkshopCard
+      title={t("workshop.cards.title-4")}
+      date={new Date("2/25/2023").toLocaleDateString()}
+      speaker="Daniel Higuita"
+      tags={["Solidity", "Ethereum", "EVM"]}
+    />
+  </div>
+</section>

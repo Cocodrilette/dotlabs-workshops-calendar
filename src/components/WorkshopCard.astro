@@ -1,0 +1,40 @@
+---
+import { textGradient } from "../utils/constants";
+import { t } from "i18next";
+
+export interface Workshop {
+  title: string;
+  date: Date;
+  speaker: string;
+  tags: string[];
+}
+
+let { title, date, speaker, tags } = Astro.props;
+
+const isToday = date === new Date().toLocaleDateString() ? true : false;
+---
+
+<div
+  class="flex flex-col border-2 border-main rounded-md z-30 p-5 h-min max-w-2xl w-full gap-2 backdrop-blur-sm"
+>
+  <h1
+    class={`text-3xl md:text-4xl font-extrabold flex items-start ${textGradient}`}
+  >
+    {title}
+  </h1>
+  <p
+    class={`w-full ${
+      isToday ? "bg-green-200" : "bg-gray-200"
+    } py-1 px-3 rounded-2xl`}
+  >
+    {isToday ? t("workshop.when") : date}
+  </p>
+  <p>Speaker: <span class="font-bold">{speaker}</span></p>
+  <div class="flex flex-wrap gap-2 mt-5">
+    {
+      tags.map((tag: string) => {
+        return <span class="bg-[#e4eaf4] py-1 px-3 rounded-xl">{tag}</span>;
+      })
+    }
+  </div>
+</div>

@@ -1,58 +1,17 @@
 ---
-import { backgroundGradientColor } from "../utils/constants";
 import Socials from "./Socials.astro";
-import menuIcon from "../assets/icons/menu.svg";
-import { LanguageSelector, Trans } from "astro-i18next/components";
+import { LanguageSelector } from "astro-i18next/components";
 import DotlabsLogo from "./DotlabsLogo.astro";
-import MenuMobile from "./MenuMobile.astro";
-import { t } from "i18next";
 ---
 
-<header class="h-16 sticky top-0 backdrop-blur-[2px] z-50">
+<header
+  class="h-16 sticky top-0 backdrop-blur-[2px] z-50 border-b-2 border-main"
+>
   <div
-    id="bgMobileMenu"
-    class="hidden absolute top-0 w-screen h-screen bg-black opacity-50 lg:hidden z-[60]"
-  >
-  </div>
-
-  <div
-    class={`absolute top-0 w-full h-full ${backgroundGradientColor} opacity-50 `}
-  >
-  </div>
-
-  <div
-    class={`grid grid-cols-2  lg:grid-cols-header items-center  max-w-[90rem] mx-auto px-4 lg:px-12 h-full relative text-main `}
+    class={`flex justify-between items-center mx-auto px-4 h-full relative text-main`}
   >
     <DotlabsLogo />
-    <nav class="hidden lg:flex gap-x-4 justify-self-center">
-      <a id="ancorDestopHome" class="hover:font-semibold cursor-pointer"
-        >{t("nav.home")}</a
-      >
-      <a id="ancorDestopDate" class="hover:font-semibold cursor-pointer"
-        >{t("nav.date")}</a
-      >
-      <!-- Does not require translation -->
-      <a id="ancorDestopTeam" class="hover:font-semibold cursor-pointer">Team</a
-      >
-      <a id="prizeDestopTeam" class="hover:font-semibold cursor-pointer"
-        >{t("nav.prize")}</a
-      >
-      <!-- Does not require translation -->
-      <a id="ancorDestopTicket" class="hover:font-semibold cursor-pointer"
-        >Ticket</a
-      >
-      <!-- Does not require translation -->
-      <a id="ancorDestopFaq" class="hover:font-semibold cursor-pointer">FAQ</a>
-      <!-- Does not require translation -->
-      <a id="ancorDestopMap" class="hover:font-semibold cursor-pointer">Map</a>
-    </nav>
-    <img
-      id="menuMobileButton"
-      src={menuIcon}
-      alt="Menu button "
-      class="lg:hidden justify-self-end cursor-pointer"
-    />
-    <MenuMobile />
+
     <Socials customStyles="hidden lg:flex">
       <LanguageSelector
         showFlag={true}
@@ -61,112 +20,3 @@ import { t } from "i18next";
     </Socials>
   </div>
 </header>
-
-<script>
-  const scrollIntoviewConf: ScrollIntoViewOptions = {
-    behavior: "smooth",
-    block: "center",
-  };
-  const scrollIntoviewConfMobile: ScrollIntoViewOptions = {
-    behavior: "smooth",
-    block: "nearest",
-  };
-  const dotlabsLogoButton = document.getElementById("dotlabsLogo");
-  const homeButton = document.getElementById("ancorDestopHome");
-  const dateButton = document.getElementById("ancorDestopDate");
-  const teamButton = document.getElementById("ancorDestopTeam");
-  const prizeButton = document.getElementById("prizeDestopTeam");
-  const ticketButton = document.getElementById("ancorDestopTicket");
-  const faqButton = document.getElementById("ancorDestopFaq");
-  const mapButton = document.getElementById("ancorDestopMap");
-
-  const home = document.getElementById("home");
-  const date = document.getElementById("date");
-  const team = document.getElementById("team");
-  const prize = document.getElementById("prize");
-  const ticket = document.getElementById("ticket");
-  const faq = document.getElementById("faq");
-  const map = document.getElementById("map");
-
-  dotlabsLogoButton?.addEventListener("click", () =>
-    home?.scrollIntoView(scrollIntoviewConf)
-  );
-  homeButton?.addEventListener("click", () =>
-    home?.scrollIntoView(scrollIntoviewConf)
-  );
-  dateButton?.addEventListener("click", () =>
-    date?.scrollIntoView(scrollIntoviewConf)
-  );
-  teamButton?.addEventListener("click", () =>
-    team?.scrollIntoView(scrollIntoviewConf)
-  );
-  prizeButton?.addEventListener("click", () =>
-    prize?.scrollIntoView(scrollIntoviewConf)
-  );
-  teamButton?.addEventListener("click", () =>
-    team?.scrollIntoView(scrollIntoviewConf)
-  );
-  ticketButton?.addEventListener("click", () =>
-    ticket?.scrollIntoView(scrollIntoviewConf)
-  );
-  faqButton?.addEventListener("click", () =>
-    faq?.scrollIntoView(scrollIntoviewConf)
-  );
-  mapButton?.addEventListener("click", () =>
-    map?.scrollIntoView(scrollIntoviewConf)
-  );
-
-  const menuMobile = document.getElementById("menuMobile") as HTMLDivElement;
-  const buttonMenuMobile = document.getElementById("menuMobileButton");
-  const buttonMenuMobileClose = document.getElementById(
-    "menuMobileCloseButton"
-  );
-
-  const homeButtonMobile = document.getElementById("ancorHome");
-  const dateButtonMobile = document.getElementById("ancorDate");
-  const teamButtonMobile = document.getElementById("ancorTeam");
-  const ticketButtonMobile = document.getElementById("ancorTicket");
-  const faqButtonMobile = document.getElementById("ancorFaq");
-  const mapButtonMobile = document.getElementById("ancorMap");
-
-  const bgMobileMenu = document.getElementById(
-    "bgMobileMenu"
-  ) as HTMLDivElement;
-
-  const hideMenu = () => {
-    bgMobileMenu.classList.add("hidden");
-    menuMobile.classList.add("hidden");
-  };
-  const showMenu = () => {
-    bgMobileMenu.classList.remove("hidden");
-    menuMobile.classList.remove("hidden");
-  };
-
-  buttonMenuMobile?.addEventListener("click", () => showMenu());
-  buttonMenuMobileClose?.addEventListener("click", () => hideMenu());
-
-  homeButtonMobile?.addEventListener("click", () => {
-    home?.scrollIntoView(scrollIntoviewConfMobile);
-    hideMenu();
-  });
-  dateButtonMobile?.addEventListener("click", () => {
-    date?.scrollIntoView(scrollIntoviewConfMobile);
-    hideMenu();
-  });
-  teamButtonMobile?.addEventListener("click", () => {
-    team?.scrollIntoView(scrollIntoviewConfMobile);
-    hideMenu();
-  });
-  ticketButtonMobile?.addEventListener("click", () => {
-    ticket?.scrollIntoView(scrollIntoviewConfMobile);
-    hideMenu();
-  });
-  faqButtonMobile?.addEventListener("click", () => {
-    faq?.scrollIntoView(scrollIntoviewConfMobile);
-    hideMenu();
-  });
-  mapButtonMobile?.addEventListener("click", () => {
-    map?.scrollIntoView(scrollIntoviewConfMobile);
-    hideMenu();
-  });
-</script>

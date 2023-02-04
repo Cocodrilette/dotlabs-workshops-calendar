@@ -1,0 +1,17 @@
+{
+  "home": {
+    "textContent": "Workshops calendar"
+  },
+  "workshop": {
+    "when": "Today",
+    "cards": {
+      "title-1": "Dynamic contract reading",
+      "title-2": "Chainlink Smart Contracts",
+      "title-3": "Smart Contracts unitesting with Hardhat",
+      "title-4": "Smart Contracts execution in the EVM"
+    }
+  },
+  "footer": {
+    "description": "Dotlabs() is a non-profit community, where Web3 is taught to anyone who is interested in writing the future of the internet."
+  }
+}

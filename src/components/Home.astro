@@ -1,5 +1,4 @@
 ---
-import startIcon from "../assets/icons/start.svg";
 import lineIcon from "../assets/icons/line-title.svg";
 import backgroundHomeImage from "../assets/images/background-home.svg";
 import { textGradient } from "../utils/constants";
@@ -26,26 +25,10 @@ import { t } from "i18next";
         <img src={lineIcon} alt="Line Icon" class="w-[18rem] ml-7" />
       </div>
     </h1>
-    <p class="max-w-md text-center text-lg">
-      {t("home.invitation")}
-    </p>
-    <a
-      id="startButton"
-      class="bg-main text-white px-16 py-3 rounded-lg flex items-center gap-x-4 z-10"
+    <h2
+      class={`text-5xl font-extrabold flex flex-col md:flex-row text-center gap-x-3 ${textGradient}`}
     >
-      <img src={startIcon} alt="Start Icon" />
-      <span>{t("home.button")}</span>
-    </a>
+      {t("home.textContent")}
+    </h2>
   </div>
 </section>
-
-<script>
-  const startButton = document.getElementById("startButton");
-  const date = document.getElementById("date");
-  startButton?.addEventListener("click", () =>
-    date?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    })
-  );
-</script>

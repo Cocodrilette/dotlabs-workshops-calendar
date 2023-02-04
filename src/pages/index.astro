@@ -1,47 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Home from "../components/Home.astro";
-import CardInformation from "../components/CardInformation.astro";
-import cardInformationImage_1 from "./../assets/images/cardInfo_img_1.svg";
-import cardInformationImage_2 from "./../assets/images/cardInfo_img_2.svg";
-import { textGradient } from "../utils/constants";
-import TicketCard from "../components/TicketCard.astro";
-import { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
-import FaqList from "../components/FaqList.astro";
-import MapSection from "../components/MapSection.astro";
-import PrizeCard from "../components/PrizeCard.astro";
+import { changeLanguage } from "i18next";
+import WorkshopsSection from "../components/WorkshopsSection.astro";
 
 changeLanguage("es");
 ---
 
 <Layout title="Dotlabs(Medellín)">
   <Home />
-  <CardInformation
-    sectionId="date"
-    mainTitle={t("cardInformation.card1.title")}
-    firstTextContent={t("cardInformation.card1.firstTextContent")}
-    secondTextContent={t("cardInformation.card1.secondTextContent")}
-    imgPath={cardInformationImage_1}
-    imgAlt="Image cannot be rendered"
-  >
-    <div class="max-w-max p-3 rounded-2xl my-3 bg-yellow-custom">
-      <p class={`font-bold ${textGradient} text-3xl tracking-wide`}>
-        {t("cardInformation.date")}
-      </p>
-    </div>
-  </CardInformation>
-  <CardInformation
-    sectionId="team"
-    reverse={true}
-    secundaryTitle={t("cardInformation.card2.title")}
-    firstTextContent={t("cardInformation.card2.firstTextContent")}
-    secondTextContent={t("cardInformation.card2.secondTextContent")}
-    imgPath={cardInformationImage_2}
-    imgAlt="Image cannot be rendered"
-  />
-  <PrizeCard />
-  <TicketCard />
-  <FaqList />
-  <MapSection />
+  <WorkshopsSection />
 </Layout>
