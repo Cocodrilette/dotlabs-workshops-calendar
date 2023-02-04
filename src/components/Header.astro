@@ -1,5 +1,4 @@
 ---
-import Socials from "./Socials.astro";
 import { LanguageSelector } from "astro-i18next/components";
 import DotlabsLogo from "./DotlabsLogo.astro";
 ---
@@ -12,11 +11,9 @@ import DotlabsLogo from "./DotlabsLogo.astro";
   >
     <DotlabsLogo />
 
-    <Socials customStyles="hidden lg:flex">
-      <LanguageSelector
-        showFlag={true}
-        class="cursor-pointer rounded-lg p-1 bg-transparent focus:outline focus:outline-main focus:outline-2"
-      />
-    </Socials>
+    <LanguageSelector
+      showFlag={true}
+      class="cursor-pointer rounded-lg p-1 bg-transparent focus:outline focus:outline-main focus:outline-2"
+    />
   </div>
 </header>
