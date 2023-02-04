@@ -1,4 +1,4 @@
-# Dotlabs()
+# Dotlabs() workshops calendar
 
 ## 🧞 Commands
 
