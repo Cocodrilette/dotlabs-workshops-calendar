@@ -6,10 +6,11 @@ export interface Workshop {
   title: string;
   date: Date;
   speaker: string;
+  speakerLink?: `https://${string}`;
   tags: string[];
 }
 
-let { title, date, speaker, tags } = Astro.props;
+let { title, date, speaker, speakerLink, tags } = Astro.props;
 
 const isToday = date === new Date().toLocaleDateString() ? true : false;
 ---
@@ -27,9 +28,27 @@ const isToday = date === new Date().toLocaleDateString() ? true : false;
       isToday ? "bg-green-200" : "bg-gray-200"
     } py-1 px-3 rounded-2xl`}
   >
-    {isToday ? t("workshop.when") : date}
+    {
+      isToday
+        ? t("workshop.when")
+        : new Date(date).toDateString() || "No date provided"
+    }
   </p>
-  <p>Speaker: <span class="font-bold">{speaker}</span></p>
+  <p>
+    Speaker: {
+      speakerLink ? (
+        <a
+          class="font-bold text-blue-700 hover:underline"
+          href={speakerLink}
+          target="_blank"
+        >
+          {speaker}
+        </a>
+      ) : (
+        <span class="font-bold">{speaker}</span>
+      )
+    }
+  </p>
   <div class="flex flex-wrap gap-2 mt-5">
     {
       tags.map((tag: string) => {
