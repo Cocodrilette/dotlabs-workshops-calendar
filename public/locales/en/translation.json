@@ -1,4 +1,7 @@
 {
+  "header": {
+    "description": "Dotlabs() workshops calendar"
+  },
   "workshop": {
     "when": "Today",
     "cards": {
