@@ -1,0 +1,50 @@
+---
+import { textGradient } from "../utils/constants";
+import BackgroundBlockLeft from "../assets/images/background_blocks_left.svg";
+import BackgroundBlockRigth from "../assets/images/background_blocks_rigth.svg";
+import ticketIcon from "../assets/icons/ticket-icon.svg";
+import { t } from "i18next";
+---
+
+<section
+  id="ticket"
+  class="flex justify-center px-6 md:px-12 h-screen min-h-[20rem] max-w-[80rem] mx-auto"
+>
+  <div
+    class="m-auto w-full h-3/4 rounded-3xl flex flex-col place-content-center drop-shadow-xl bg-gradient-to-tl to-orange-50 from-blue-100 opacity-90 backdrop-blur-sm"
+  >
+    <img
+      src={BackgroundBlockRigth}
+      alt="The image cannot be rendered"
+      class="absolute top-0 right-0 brightness-100"
+    />
+    <h1
+      class={`text-center text-5xl md:text-7xl font-extrabold ${textGradient} z-30`}
+    >
+      {t("ticketCard.title")}
+    </h1>
+    <p class="text-center text-xl md:text-3xl font-bold z-30">
+      {t("ticketCard.textContent")}
+    </p>
+    <button
+      id="getTicket"
+      class={`w-max md:w-[300px] gap-3 rounded-2xl py-2 px-12 flex place-self-center justify-center text-white mt-10 bg-main z-10`}
+    >
+      <img src={ticketIcon} alt="Alt text" />
+      {t("ticketCard.button")}
+    </button>
+    <img
+      src={BackgroundBlockLeft}
+      alt="The iamge cannot be rendered"
+      class="absolute bottom-0"
+    />
+  </div>
+</section>
+
+<script>
+  const getTicketButton = document.getElementById("getTicket");
+
+  getTicketButton?.addEventListener("click", () =>
+    alert("Inscripciones aún no disponibles")
+  );
+</script>

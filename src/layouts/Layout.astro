@@ -1,0 +1,36 @@
+---
+import Header from "../components/Header.astro";
+import Countdown from "../components/Countdown.astro";
+import { backgroundGradientColor } from "../utils/constants";
+import i18next from "i18next";
+import { HeadHrefLangs } from "astro-i18next/components";
+import Footer from "../components/Footer.astro";
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={i18next.language} class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Ven y unete a la Hackathon de Web3 mas grande de LATAM."
+    />
+    <meta property="og:image" content="/dotlabs.jpg" />
+    <meta property="og:image:secure_url" content="/dotlabs.jpg" />
+    <meta property="image" content="/dotlabs.jpg" />
+    <HeadHrefLangs />
+  </head>
+  <body class={`w-full mx-auto ${backgroundGradientColor}`}>
+    <Header />
+    <Countdown />
+    <main class="mx-auto">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

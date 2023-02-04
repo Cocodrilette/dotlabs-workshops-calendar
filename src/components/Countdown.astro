@@ -1,0 +1,20 @@
+---
+import timerIcon from "../assets/icons/timer.svg";
+import { t } from "i18next";
+---
+
+<section
+  class="bg-main text-white flex justify-center items-center h-11 sticky top-16 z-40"
+>
+  <div class="flex gap-x-3">
+    <img src={timerIcon} alt="Instagram" />
+    <p>
+      {t("countDown.textContent")}<span
+        class="text-yellow-custom font-semibold"
+      >
+        {t("countDown.title")}
+        <!-- 3 Días / 18 Hrs / 25seg -->
+      </span>
+    </p>
+  </div>
+</section>
