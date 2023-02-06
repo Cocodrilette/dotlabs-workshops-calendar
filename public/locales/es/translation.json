@@ -5,10 +5,12 @@
   "workshop": {
     "when": "Hoy",
     "cards": {
-      "title-1": "Lectura dinamica de contratos",
       "title-2": "Chainlink Smart Contracts",
       "title-3": "Test unitarios de Smart Contracts con Hardhat",
-      "title-4": "Ejecución de Smart Contracts en la EVM"
+      "title-4": "Ejecución de Smart Contracts en la EVM",
+      "title-5": "Solidity Master",
+      "title-6": "Solidity Grand-Master",
+      "title-7": "Solidity Lengendary"
     }
   },
   "footer": {
