@@ -33,9 +33,10 @@ const isToday = date === new Date().toLocaleDateString() ? true : false;
         ? t("workshop.when")
         : new Date(date).toDateString() || "No date provided"
     }
+    {" "} | 02:00 P.M
   </p>
   <p>
-    Speaker: {
+    {t("workshop.agent")}: {
       speakerLink ? (
         <a
           class="font-bold text-blue-700 hover:underline"

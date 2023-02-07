@@ -3,6 +3,7 @@
     "description": "Calendario de talleres de Dotlabs()"
   },
   "workshop": {
+    "agent": "Ponente",
     "when": "Hoy",
     "cards": {
       "title-2": "Chainlink Smart Contracts",
@@ -12,6 +13,9 @@
       "title-6": "Solidity Grand-Master",
       "title-7": "Solidity Lengendary"
     }
+  },
+  "helpSection": {
+    "message": "Streaming a través de nuestro canal oficial de YouTube"
   },
   "footer": {
     "description": "Dotlabs() es una comunidad sin ánimo de lucro, donde se enseña Web3 a cualquier persona que esté interesada en escribir el futuro del internet"
