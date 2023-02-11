@@ -1,4 +1,8 @@
-# Dotlabs() workshops calendar
+# Dotlabs(workshops) calendar (⚠️ Migrated)
+
+## ⚠️ Important
+
+The content of this repo was migrated to [Dotlabs()](https://github.com/EdisonBedoya98/dotlabs-medellin-hackathon-landing) main repo.
 
 ## 🧞 Commands
 
