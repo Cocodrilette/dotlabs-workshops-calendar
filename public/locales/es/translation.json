@@ -20,5 +20,8 @@
   },
   "footer": {
     "description": "Dotlabs() es una comunidad sin ánimo de lucro, donde se enseña Web3 a cualquier persona que esté interesada en escribir el futuro del internet"
+  },
+  "buttons": {
+    "backToHome": "← Regresar"
   }
 }
