@@ -9,7 +9,7 @@
       "title-2": "Chainlink Smart Contracts",
       "title-3": "Smart Contracts unitesting with Hardhat",
       "title-4": "Smart Contracts execution in the EVM",
-      "title-5": "Solidity Master",
+      "title-5": "Intro to Foundry",
       "title-6": "Solidity Grand-Master",
       "title-7": "Solidity Lengendary",
       "title-8": "Deploying ERC-20 and ERC-721 in Celo"
@@ -22,6 +22,6 @@
     "description": "Dotlabs() is a non-profit community, where Web3 is taught to anyone who is interested in writing the future of the internet."
   },
   "buttons": {
-    "backToHome": "← Back tho Home"
+    "backToHome": "Back tho Home"
   }
 }
